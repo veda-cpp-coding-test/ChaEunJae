@@ -24,6 +24,8 @@ vector<int> extractNumVec(int num){ // int 숫자의 각 자릿수를 추출해�
 }
 
 int main(){
+	ios::sync_with_stdio(0);
+	cin.tie(0);
 	
 	int N;
 	cin >> N;
