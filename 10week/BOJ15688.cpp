@@ -16,7 +16,7 @@ int main(){
         cin >> arr[i];
     }
 
-    // 퀵 소트 시간 복잡도 = O(NlogN) = 1000000 * 6
+    // 퀵 소트 최악 시간 복잡도 = O(NlogN) = 1000000 * 6
     sort(arr,arr+N);
     for(auto a:arr){
         cout << a << "\n";
