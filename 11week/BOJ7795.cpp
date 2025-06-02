@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include <vector>
-// #include <algorithm>
+#include <algorithm>
 
 using namespace std;
 
@@ -29,14 +29,25 @@ int main(){
             B.push_back(e);
         }
 
+        // 정렬 + 이분 탐색 버전 -> 시간 훨씬 줄임
+        sort(A.begin(),A.end());
+        sort(B.begin(),B.end());
         int count = 0;
-        for(int j=0;j<N;j++){
-            for(int z=0;z<M;z++){
-                if(A[j] > B[z]){
-                    count++;
-                }
-            }
+        for(int i=0;i<M;i++){
+            int ub = A.end()-upper_bound(A.begin(),A.end(),B[i]);
+            count += ub;
         }
         cout << count << "\n";
+
+        // 이중 for문 버전
+        // int count = 0;
+        // for(int j=0;j<N;j++){
+        //     for(int z=0;z<M;z++){
+        //         if(A[j] > B[z]){
+        //             count++;
+        //         }
+        //     }
+        // }
+        // cout << count << "\n";
     }
 }
